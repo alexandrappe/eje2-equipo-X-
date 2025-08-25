@@ -39,5 +39,16 @@ profesion(irene, criar_cabras).
 decendiente(X,Y) :- hijo(X,Y).
 decendiente(X,Y) :- hijo(X,Z), decendiente(Z,Y).
 
+%Festevidades
+festeja(rivoria, la_fiesta_del_rio).
+festeja(montelar, la_ceremonia_de_la_luna).
+festeja(durania, feria_del_grano).
+
+%creencias
+venera(rivoria, espiritu_del_agua).
+venera(montelar, espiritu_de_la_montanna).
+venera(durania, espiritu_de_la_tierra).
+
+
 rivoriano(X) :- decendiente(X, esteban) ; X=mariela ; X=esteban.
 duranianos(X) :- X=mateo; X=irene
