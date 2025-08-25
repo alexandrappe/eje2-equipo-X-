@@ -1,3 +1,4 @@
+% Esposos y esposas
 esposo(esteban, mariela).
 esposo(andres, clara).
 esposo(rodolfo, teresa).
@@ -5,6 +6,7 @@ esposo(mateo,irene).
 esposo(alonso, beatriz).
 esposo(andres, catalina).
 
+% Hijos
 hijo(clara, esteban).
 hijo(clara, mariela).
 hijo(rodolfo, esteban).
@@ -17,7 +19,6 @@ hijo(lucas, rodolfo).
 hijo(lucas, teresa).
 hijo(martina, rodolfo).
 hijo(martina, teresa).
-amigo(hector, ismael).
 hijo(felipe, alonso).
 hijo(catalina, alonso).
 hijo(emilia, alonso).
@@ -25,6 +26,10 @@ hijo(felipe, beatriz).
 hijo(catalina, beatriz).
 hijo(emilia, beatriz).
 
+% Amistades
+amigo(hector, ismael).
+
+% Profesiones
 profesion(hector,herrero).
 profesion(teresa, tejedora).
 profesion(clara,maestra).
@@ -36,6 +41,7 @@ profesion(irene, vender_leche).
 profesion(irene, vender_queso).
 profesion(irene, criar_cabras).
 
+% Descendientes
 decendiente(X,Y) :- hijo(X,Y).
 decendiente(X,Y) :- hijo(X,Z), decendiente(Z,Y).
 
@@ -49,6 +55,6 @@ venera(rivoria, espiritu_del_agua).
 venera(montelar, espiritu_de_la_montanna).
 venera(durania, espiritu_de_la_tierra).
 
-
+% Aldeas
 rivoriano(X) :- decendiente(X, esteban) ; X=mariela ; X=esteban.
-duranianos(X) :- X=mateo; X=irene
+duranianos(X) :- X=mateo; X=irene.
