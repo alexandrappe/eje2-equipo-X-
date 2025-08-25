@@ -5,6 +5,11 @@ esposo(mateo,irene).
 esposo(alonso, beatriz).
 esposo(andres, catalina).
 
+aldea(durania).
+aldea(montelar).
+aldea(rivoria).
+
+
 hijo(clara, esteban).
 hijo(clara, mariela).
 hijo(rodolfo, esteban).
