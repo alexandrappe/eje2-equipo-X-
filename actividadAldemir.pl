@@ -19,4 +19,4 @@ amigo(hector, ismael).
 decendiente(X,Y) :- hijo(X,Y).
 decendiente(X,Y) :- hijo(X,Z), decendiente(Z,Y).
 
-rivoriano(X) :- decendiente(X, esteban).
+rivoriano(X) :- decendiente(X, esteban) ; X=mariela ; X=esteban.
