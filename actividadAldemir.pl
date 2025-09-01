@@ -2,7 +2,7 @@
 esposo(esteban, mariela).
 esposo(andres, clara).
 esposo(rodolfo, teresa).
-esposo(mateo,irene).
+esposo(mateo, irene).
 esposo(alonso, beatriz).
 esposo(andres, catalina).
 
