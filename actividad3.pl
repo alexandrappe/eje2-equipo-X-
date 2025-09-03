@@ -84,3 +84,8 @@ redondear_arriba(N, R) :-
     R is ceil(N).
 
     
+hipotenusa(A,B,H) :- H is sqrt(A^2+B^2).
+
+calculadora(Resultado) :- write('Seleccione una operacion:'), nl, write('1: suma'), nl, write('2: multiplicacion'),nl, write('3: division'),nl, write('4: resta'),nl, write('Cualquier otro para salir'), read(O), O < 5 ->  write('Ingrese el primer numero'), read(X),nl, write('Ingrese el segundo numero'), read(Y), ( O =:= 1 -> R is X+Y; ( O =:= 2 -> R is X*Y; ( O =:= 3 -> R is X/Y; ( O =:= 4 -> R is X-Y)))),write('El resultado es: '), write(R), calculadora(R).
+
+notas(Nmax,Nmin,Sum,X) :- write('Ingrese la nota'),nl, write('Escriba 11 para salir'), nl, read(N), N =\ 11 -> (M is Nmax,M<N ->  M is N),(Mi is Nmin,Mi>N,Mi is N),(S is Sum+N ), F is X+1, write(M), write(Mi), write(S/f) notas(M,Mi,S,F).
