@@ -1,3 +1,15 @@
+%  1. aritmeticos
+
+rectangulo(X,Y, A, P) :-
+    A is X * Y,
+    P is +((X* 2), (Y*2)).
+
+par_impar(N, Modulo) :-
+    Modulo is (N mod 2),
+    write(Modulo), 
+    Modulo  =:= 0 ->  write('El numero es par') ;  write('El numero es impar')
+    , nl.
+
 % 2. Operadores Relacionales
 % Mayor que
 mayor(X, Y, Resultado) :-
