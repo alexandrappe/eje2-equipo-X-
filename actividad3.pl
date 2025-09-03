@@ -1,3 +1,25 @@
+% 2. Operadores Relacionales
+% Mayor que
+mayor(X, Y, Resultado) :-
+   X > Y.
+  
+categoria_edad :-
+write('Ingrese su edad: '), read(Num),
+( Num >= 18
+-> write('Es mayor de edad')
+; write('Es menor de edad')
+).
+
+%Nota de aprobación
+aprobo :-
+    write('Ingrese su nota: '), read(Num),
+    ( Num > 7
+    -> write('Aprobo')
+    ; write('No aprobo')
+    ).
+
+
+
 % 3. Operadores de Ligadura y Unificación
 % Ejercicio 7: Unificación de estructuras - Crear predicado es_hermano/2.
 hijo(clara, esteban).
