@@ -82,6 +82,13 @@ abuela(Abuela,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuela).
 primo(X,Y):-primo(Y,X).
 amigo(X,Y):-amigo(Y,X).
 
+%2.5 Definir amigos de un primo.
+
+amigo_de_primo(X, Y):- amigo(X, Z) , primo(Z, Y).
+
+hermano(X, Y):- 
+    (hijo(X, Z), hijo(Y, Z)), X \= Y.
+
 
 %consultas
 % 2- Quien es el abuelo de mateo
@@ -91,3 +98,4 @@ amigo(X,Y):-amigo(Y,X).
 % 5- Consultar si Mateo y Daniel son amigos
 :- amigo(mateo, daniel).
 % respuesta= true
+
