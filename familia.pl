@@ -88,3 +88,5 @@ amigo_de_primo(X, Y):- amigo(X, Z) , primo(Z, Y).
 
 hermano(X, Y):- 
     (hijo(X, Z), hijo(Y, Z)), X \= Y.
+
+hermano(X, Y):- hermano(Y, X).
