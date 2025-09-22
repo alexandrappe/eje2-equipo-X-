@@ -1,3 +1,17 @@
+vive_en(carlos, ciudad).
+vive_en(ana, valle_verde).
+vive_en(lucia,capital).
+vive_en(ricardo,capital).
+vive_en(miguel,valle_verde).
+vive_en(doña_carmen,valle_verde).
+vive_en(don_felipe,ciudad).
+
+trabaja_en(carlos, empresa_contructora).
+trabaja_en(ana, escuela_secundaria_valle_verde).
+trabaja_en(lucia, estudiante).
+trabaja_en(laura, biblioteca).
+trabaja_en(miguel, parcela).
+
 padre(ernesto, carlos).
 padre(ernesto, ana).
 padre(ernesto, lucia).
