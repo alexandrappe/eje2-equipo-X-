@@ -46,6 +46,17 @@ hijo(fernanda, rosa).
 hijo(fernanda, miguel).
 hijo(joaquin, felipe).
 
+%primos
+primo(daniel,lucia).
+primo(daniel,carlos).
+primo(daniel,ana).
+primo(andres,mateo).
+primo(andres,valeria).
+primo(andres,mateo).
+primo(fernanda,andres).
+primo(fernanda,mateo).
+primo(fernanda,valeria).
+
 amigo(carlos,ricardo).
 amigo(daniel,mateo).
 amigo(laura,valeria).
@@ -66,3 +77,6 @@ abuelo(Abuelo,Nieto) :- hijo(Nieto,Padre), hijo(Padre,Abuelo).
 abuela(Abuela,Nieto) :- hijo(Nieto,Padre), hijo(Padre,Abuela).
 abuelo(Abuelo,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuelo).
 abuela(Abuela,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuela).
+%4 Definir la relación de primos/as.
+
+primo(X,Y):-primo(Y,X).
