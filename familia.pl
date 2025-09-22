@@ -46,6 +46,17 @@ hijo(fernanda, rosa).
 hijo(fernanda, miguel).
 hijo(joaquin, felipe).
 
+%primos
+primo(daniel,lucia).
+primo(daniel,carlos).
+primo(daniel,ana).
+primo(andres,mateo).
+primo(andres,valeria).
+primo(andres,mateo).
+primo(fernanda,andres).
+primo(fernanda,mateo).
+primo(fernanda,valeria).
+
 amigo(carlos,ricardo).
 amigo(daniel,mateo).
 amigo(laura,valeria).
@@ -59,3 +70,7 @@ casado_con(ernesto, teresa).
 casado_con(carlos, sofia).
 casado_con(ricardo, laura).
 casado_con(miguel, rosa).
+
+%4 Definir la relación de primos/as.
+
+primo(X,Y):-primo(Y,X).
