@@ -80,3 +80,14 @@ abuela(Abuela,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuela).
 %4 Definir la relación de primos/as.
 
 primo(X,Y):-primo(Y,X).
+amigo(X,Y):-amigo(Y,X).
+
+
+%consultas
+% 2- Quien es el abuelo de mateo
+:- abuelo(X, mateo).
+% respuesta= ernesto
+
+% 5- Consultar si Mateo y Daniel son amigos
+:- amigo(mateo, daniel).
+% respuesta= true
