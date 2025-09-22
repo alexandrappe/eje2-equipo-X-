@@ -85,3 +85,6 @@ primo(X,Y):-primo(Y,X).
 %2.5 Definir amigos de un primo.
 
 amigo_de_primo(X, Y):- amigo(X, Z) , primo(Z, Y).
+
+hermano(X, Y):- 
+    (hijo(X, Z), hijo(Y, Z)), X \= Y.
