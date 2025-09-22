@@ -80,3 +80,8 @@ abuela(Abuela,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuela).
 %4 Definir la relación de primos/as.
 
 primo(X,Y):-primo(Y,X).
+
+
+%2.5 Definir amigos de un primo.
+
+amigo_de_primo(X, Y):- amigo(X, Z) , primo(Z, Y).
