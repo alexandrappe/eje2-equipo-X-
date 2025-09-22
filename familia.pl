@@ -141,3 +141,5 @@ Lugar = valle_verde ;
 Persona = don_felipe,
 Lugar = ciudad.
 */
+
+:- hermano(X, _) ; hermano(_, Y).
