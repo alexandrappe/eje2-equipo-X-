@@ -1,10 +1,20 @@
 vive_en(carlos, ciudad).
+vive_en(sofia, ciudad).
 vive_en(ana, valle_verde).
 vive_en(lucia,capital).
 vive_en(ricardo,capital).
 vive_en(miguel,valle_verde).
+vive_en(rosa,valle_verde).
 vive_en(doña_carmen,valle_verde).
 vive_en(don_felipe,ciudad).
+vive_en(mateo,ciudad).
+vive_en(valeria,ciudad).
+vive_en(andres,valle_verde).
+vive_en(joaquin,valle_verde).
+vive_en(laura,capital).
+vive_en(fernanda,capital).
+vive_en(isabel,capital).
+
 
 trabaja_en(carlos, empresa_contructora).
 trabaja_en(ana, escuela_secundaria_valle_verde).
@@ -79,6 +89,12 @@ abuelo(Abuelo,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuelo).
 abuela(Abuela,Nieto) :- hijo(Nieto,Madre), hijo(Madre,Abuela).
 %4 Definir la relación de primos/as.
 
+% 3 tios
+tio(X,Y):-hermano(X,Z), padre(Y,Z).
+tia(X,Y):-hermano(X,Z), padre(Y,Z).
+tio(X,Y):-hermano(X,Z), madre(Y,Z).
+tia(X,Y):-hermano(X,Z), madre(Y,Z).
+
 primo(X,Y):-primo(Y,X).
 amigo(X,Y):-amigo(Y,X).
 
@@ -103,6 +119,7 @@ hermano(X, Y):- hermano(Y, X).
 
 % 5- En que lugar vive cada miembro
 :- vive_en(Persona, Lugar).
+
 %respuesta
 /*
 2 ?- vive_en(Persona, Lugar).
