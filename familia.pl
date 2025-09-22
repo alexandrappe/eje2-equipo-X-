@@ -101,3 +101,26 @@ hermano(X, Y):- hermano(Y, X).
 :- amigo(mateo, daniel).
 % respuesta= true
 
+% 5- En que lugar vive cada miembro
+:- vive_en(Persona, Lugar).
+%respuesta
+/*
+2 ?- vive_en(Persona, Lugar).
+Persona = carlos,
+Lugar = ciudad ;
+
+Persona = ana,
+Lugar = valle_verde ;
+
+Persona = lucia,
+Lugar = capital ;
+
+Persona = ricardo,
+Lugar = capital ;
+
+Persona = miguel,
+Lugar = valle_verde ;
+
+Persona = don_felipe,
+Lugar = ciudad.
+*/
