@@ -27,3 +27,34 @@ juega(pedro).
 estudia(sofia).
 %maria descansa los domingos
 descansa(maria).
+
+rutina(estudia,lunes).
+rutina(estudia,martes).
+rutina(estudia,miercoles).
+rutina(estudia,jueves).
+rutina(estudia,viernes).
+rutina(descansa,sabado).
+rutina(descansa,domingo).
+rutina(trabaja, lunes).
+rutina(trabaja, martes).
+rutina(trabaja, miercoles).
+rutina(trabaja, jueves).
+rutina(trabaja, viernes).
+rutina(juega, sabado).
+rutina(trabaja, sabado).
+rutina(trabaja, domingo).
+rutina(estudia,sabado).
+rutina(estudia,domingo).
+rutina(descansa,lunes).
+rutina(descansa,martes).
+rutina(descansa,miercoles).
+rutina(descansa,jueves).
+rutina(descansa,viernes).
+rutina(cocina, lunes).
+rutina(cocina, martes).
+rutina(cocina, miercoles).
+rutina(cocina, jueves).
+rutina(cocina, viernes).
+rutina(cocina, sabado).
+rutina(cocina, domingo).
+
