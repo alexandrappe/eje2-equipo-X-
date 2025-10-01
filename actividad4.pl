@@ -1,4 +1,5 @@
 %parte 1 - amistades
+%Personaje nuevo: Bob
 
 amigo(juan,ana).
 amigo(ana,juan).
@@ -6,16 +7,20 @@ amigo(maria, juan).
 amigo(juan,maria).
 amigo(pedro,sofia).
 amigo(sofia, pedro).
+amigo(bob, sofia).
+amigo(sofia, bob).
 
 % Actividades
 % pedro y sofia trabajan juntos en la tienda
 trabaja(pedro).
 trabaja(sofia).
+trabaja(bob).
 % maria y juan estudian en la biblioteca
 estudia(maria).
 estudia(juan).
 %ana cocina todos los dias
 cocina(ana).
+cocina(bob).
 %menos cuando esta cansada
 descansa(ana).
 %juan descansa los fines de semana
@@ -62,6 +67,10 @@ hermano(pedro, ana).
 hermano(ana, pedro).
 primo(maria, sofia).
 primo(sofia, maria).
+primo(bob, pedro).
+primo(pedro, bob).
+primo(sofia, bob).
+primo(bob, sofia).
 
 
 %parte 2
@@ -70,7 +79,6 @@ actividad(X) :- trabaja(X); estudia(X); cocina(X); juega(X), X \= descansa.
 
 %regla descansa (X) que sea verdadera si X no realiza otra actividad ese dias
 descansa1(X) :-  descansa(X), X \= trabaja,  X \=estudia,  X \=cocina,  X \=juega.
-
 
 parentesco(X, Y):-
     hermano(X, Y) ; hermano(Y, X) , X \= Y,
@@ -112,3 +120,17 @@ es_palindromo([H|T]) :-
 
 
 
+
+%Consultas nuevas:
+:-descansa(Dormilon).
+:-trabaja(Trabajador).
+
+/*
+• ?- cocina(ana). | Respuesta: true
+• ?- es_amigo(ana, maria). | Respuesta: true
+• ?- miembro(estudiar, [cocinar, estudiar, jugar]). | Respuesta: true
+• ?- invertir([cocinar, estudiar, jugar], R). | Respuesta: R = [jugar, estudiar, cocinar].
+• ?- actividad(pedro, sabado, A). | A = [juega].
+
+6. Explicacion de caso base y general:
+*/
