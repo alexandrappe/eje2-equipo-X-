@@ -71,9 +71,11 @@ parentesco(X, Y):-
     primo(X, Y) ; primo(Y, X) , X \= Y, 
     fail.
 
+% Caso base: amistad directa
 es_amigo(X,Y):-
     amigo(X,Y).
 
+% Caso general: amistad indirecta
 es_amigo(X,Y):-
     es_amigo(Z,X), es_amigo(Z,Y), !.
 
@@ -89,4 +91,15 @@ invertir([], []).
 invertir([H|T], R) :-
 	invertir(T, RT),
 	append(RT, [H], R).
+
+
+% Nueva regla que use recursion
+es_palindromo([H|T]) :-
+    invertir([H|T],R),
+    R == [H|T].
+
+
+
+
+
 
