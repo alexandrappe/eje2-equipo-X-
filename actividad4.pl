@@ -63,6 +63,15 @@ hermano(ana, pedro).
 primo(maria, sofia).
 primo(sofia, maria).
 
+
+%parte 2
+% regla actividad(X) que sea verdadera si X realiza alguna actividad
+actividad(X) :- trabaja(X); estudia(X); cocina(X); juega(X), X \= descansa.
+
+%regla descansa (X) que sea verdadera si X no realiza otra actividad ese dias
+descansa1(X) :-  descansa(X), X \= trabaja,  X \=estudia,  X \=cocina,  X \=juega.
+
+
 parentesco(X, Y):-
     hermano(X, Y) ; hermano(Y, X) , X \= Y,
     fail.
