@@ -7,7 +7,6 @@ amigo(juan,maria).
 amigo(pedro,sofia).
 amigo(sofia, pedro).
 
-
 % Actividades
 % pedro y sofia trabajan juntos en la tienda
 trabaja(pedro).
@@ -27,3 +26,9 @@ juega(pedro).
 estudia(sofia).
 %maria descansa los domingos
 descansa(maria).
+
+es_amigo(X,Y):-
+    amigo(X,Y).
+
+es_amigo(X,Y):-
+    es_amigo(Z,X), es_amigo(Z,Y), !.
