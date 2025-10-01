@@ -115,12 +115,6 @@ es_palindromo([H|T]) :-
     invertir([H|T],R),
     R == [H|T].
 
-
-
-
-
-
-
 %Consultas nuevas:
 :-descansa(Dormilon).
 :-trabaja(Trabajador).
