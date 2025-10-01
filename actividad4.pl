@@ -132,5 +132,4 @@ es_palindromo([H|T]) :-
 • ?- invertir([cocinar, estudiar, jugar], R). | Respuesta: R = [jugar, estudiar, cocinar].
 • ?- actividad(pedro, sabado, A). | A = [juega].
 
-6. Explicacion de caso base y general:
 */
