@@ -27,8 +27,66 @@ estudia(sofia).
 %maria descansa los domingos
 descansa(maria).
 
+rutina(estudia,lunes).
+rutina(estudia,martes).
+rutina(estudia,miercoles).
+rutina(estudia,jueves).
+rutina(estudia,viernes).
+rutina(descansa,sabado).
+rutina(descansa,domingo).
+rutina(trabaja, lunes).
+rutina(trabaja, martes).
+rutina(trabaja, miercoles).
+rutina(trabaja, jueves).
+rutina(trabaja, viernes).
+rutina(juega, sabado).
+rutina(trabaja, sabado).
+rutina(trabaja, domingo).
+rutina(estudia,sabado).
+rutina(estudia,domingo).
+rutina(descansa,lunes).
+rutina(descansa,martes).
+rutina(descansa,miercoles).
+rutina(descansa,jueves).
+rutina(descansa,viernes).
+rutina(cocina, lunes).
+rutina(cocina, martes).
+rutina(cocina, miercoles).
+rutina(cocina, jueves).
+rutina(cocina, viernes).
+rutina(cocina, sabado).
+rutina(cocina, domingo).
+
+%Hermanos y primos.
+hermano(pedro, ana).
+hermano(ana, pedro).
+primo(maria, sofia).
+primo(sofia, maria).
+
+parentesco(X, Y):-
+    hermano(X, Y) ; hermano(Y, X) , X \= Y,
+    fail.
+
+parentesco(X, Y):-
+    primo(X, Y) ; primo(Y, X) , X \= Y, 
+    fail.
+
 es_amigo(X,Y):-
     amigo(X,Y).
 
 es_amigo(X,Y):-
     es_amigo(Z,X), es_amigo(Z,Y), !.
+
+miembro(X, [X|_]).
+
+miembro(X, [_|T]) :-
+	miembro(X, T). 
+
+% Caso base: la inversa de la lista vacía es []
+invertir([], []).
+
+% Caso general: invierto la cola y agrego la cabeza al final
+invertir([H|T], R) :-
+	invertir(T, RT),
+	append(RT, [H], R).
+
