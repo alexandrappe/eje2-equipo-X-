@@ -76,3 +76,11 @@ miembro(X, [X|_]).
 
 miembro(X, [_|T]) :-
 	miembro(X, T). 
+
+% Caso base: la inversa de la lista vacía es []
+invertir([], []).
+
+% Caso general: invierto la cola y agrego la cabeza al final
+invertir([H|T], R) :-
+	invertir(T, RT),
+	append(RT, [H], R).
