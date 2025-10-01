@@ -58,3 +58,21 @@ rutina(cocina, viernes).
 rutina(cocina, sabado).
 rutina(cocina, domingo).
 
+%Hermanos y primos.
+hermano(pedro, ana).
+hermano(ana, pedro).
+primo(maria, sofia).
+primo(sofia, maria).
+
+parentesco(X, Y):-
+    hermano(X, Y) ; hermano(Y, X) , X \= Y,
+    fail.
+
+parentesco(X, Y):-
+    primo(X, Y) ; primo(Y, X) , X \= Y, 
+    fail.
+
+miembro(X, [X|_]).
+
+miembro(X, [_|T]) :-
+	miembro(X, T). 
