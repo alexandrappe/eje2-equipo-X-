@@ -91,19 +91,18 @@ parentesco(X, Y):-
 % Caso base: amistad directa
 es_amigo(X,Y):-
     amigo(X,Y).
-
 % Caso general: amistad indirecta
 es_amigo(X,Y):-
     es_amigo(Z,X), es_amigo(Z,Y), !.
 
-miembro(X, [X|_]).
 
+% Caso base: Es la cabeza
+miembro(X, [X|_]).
+% Caso general: Es parte de la cola
 miembro(X, [_|T]) :-
 	miembro(X, T). 
-
 % Caso base: la inversa de la lista vacía es []
 invertir([], []).
-
 % Caso general: invierto la cola y agrego la cabeza al final
 invertir([H|T], R) :-
 	invertir(T, RT),
