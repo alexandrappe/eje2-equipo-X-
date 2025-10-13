@@ -1,5 +1,5 @@
 % Declaramos el predicado empleado/2 como dinámico.
-:- dynamic empleado/2.
+:- dynamic empleado/3.
 
 % Consultar todos los empleados registrados
 listar_empleados :-
@@ -36,7 +36,7 @@ eliminar_todos :-
 %////////////////////////////////////////////////////////////////////////////////
 
 % Actualizar el depto de un empleado
-actualizar_depto(Nombre, NuevoDepto, NuevoSalario) :-
+actualizar_empleado(Nombre, NuevoDepto, NuevoSalario) :-
     retract(empleado(Nombre, _, _)),  % elimina el hecho antiguo
     assert(empleado(Nombre, NuevoDepto, NuevoSalario)),  % inserta el nuevo
     format('Se ha actualizado el depto de ~w a ~w.~n', [Nombre, NuevoDepto, NuevoSalario]),
@@ -51,6 +51,60 @@ agregar_unico(Nombre, Depto, Salario) :-
     ;   assert(empleado(Nombre, Depto, Salario)),
         format('Se ha agregado a ~w en el depto ~w.~n', [Nombre, Depto, Salario])
     ).
+
+main :- 
+write('📘 SISTEMA DE EMPLEADOS INICIADO'), nl,
+write('========= MENÚ ========='), nl,
+write('1. Listar empleados'), nl,
+write('2. Agregar empleado'), nl,
+write('3. Eliminar empleado'), nl,
+write('4. Actualizar empleado'), nl,
+write('5. Agregar empleado'), nl,
+write('6. Eliminar todos'), nl,
+write('0. Salir'), nl,
+write('========================'), nl,
+write('Seleccione una opción: '), read(O),
+(
+    O =:= 1 ->
+    listar_empleados ; 
+    O =:= 2 -> 
+    (
+        write('Ingrese el nombre: '), read(Name), nl,
+        write('Ingrese el depto: '), read(Depto), nl,
+        write('Ingrese el salario: '), read(Salario), nl,
+
+        agregar_empleado(Name, Depto, Salario)
+    ) ; 
+    O =:= 3 -> 
+    (
+        write('Ingrese el nombre: '), read(Name), nl,
+        eliminar_empleado(Name)
+    ) ; 
+    O =:= 4 -> 
+    (
+        write('Ingrese el nombre: '), read(Name), nl,
+        write('Ingrese el depto: '), read(Depto), nl,
+        write('Ingrese el salario: '), read(Salario), nl,
+
+        actualizar_empleado(Name, Depto, Salario)
+    ) ; 
+    O =:= 5 -> 
+    (
+        write('Ingrese el nombre: '), read(Name), nl,
+        write('Ingrese el depto: '), read(Depto), nl,
+        write('Ingrese el salario: '), read(Salario), nl,
+
+        agregar_unico(Name, Depto, Salario)
+    ) ;
+    O =:= 6 -> 
+    (
+        eliminar_todos
+    ) ; 
+    O =:= 0 -> (write('Fin de la simulación de sesión del sistema de empleados'), nl, write('=========================================='))
+),
+(
+    O =\= 0 -> main
+).
 
 %actividad replicar la siguiente salida en la consola:
 % ==========================================
