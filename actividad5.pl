@@ -33,7 +33,7 @@ eliminar_empleado(Nombre) :-
 
 % Eliminar todos los empleados
 eliminar_todos :-
-    retractall(empleado(_, _)),
+    retractall(empleado(_, _, _)),
     writeln('Todos los empleados han sido eliminados de la base.').
 
 % eliminar_empleado('Luis').
@@ -105,7 +105,7 @@ write('Seleccione una opción: '), read(O),
     (
         eliminar_todos
     ) ; 
-    O =:= 0 -> (write('Fin de la simulación de sesión del sistema de empleados'), nl, write('=========================================='))
+    O =:= 0 -> (write('Fin de la simulación de sesión del sistema de empleados'), nl, write('==========================================')) ; write('Opción inválida')
 ),
 (
     O =\= 0 -> main
