@@ -126,3 +126,4 @@ es_palindromo([H|T]) :-
 • ?- actividad(pedro, sabado, A). | A = [juega].
 
 */
+
