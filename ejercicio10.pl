@@ -28,6 +28,24 @@ derivada(A - B, X, DA - DB) :-
 ?- derivada(x*x - 25*x + 13, x, D).
 % D = x*1 + x*1 - (25*1 + x*0) + 0.
 
+% 4. Suma de fracciones simbólicas
+
+suma(frac(A, B), frac(C, D), frac(N, M)) :-
+    N is A*D + C*B,
+    M is B*D.
+
+resta(frac(A, B), frac(C, D), frac(N, M)) :-
+    N is A*D - C*B,
+    M is B*D.
+
+% 12. Sume las siguientes fracciones simbólicas:
+% ?- suma(frac(1,2), frac(1,3), R). Respuesta: R = frac(5, 6).   
+
+% 13. Realice la suma siguiente y verifique el numerador y denominador del resultado:
+% ?- suma(frac(2,5), frac(3,10), R). Respuesta: R = frac(35, 50).
+
+% 14. Cree una regla adicional para restar fracciones y pruebe:
+% ?- resta(frac(3,4), frac(1,2), R). Respuesta: R = frac(2, 8).
 
 % 5. RESOLUCION SIMBOLICA SENCILLA
 
