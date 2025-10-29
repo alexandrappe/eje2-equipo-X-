@@ -1,3 +1,33 @@
+% 2. DERIVACION SIMBOLICA
+
+derivada(X, X, 1).
+derivada(C, _, 0) :- number(C).
+derivada(A + B, X, DA + DB) :-
+    derivada(A, X, DA),
+    derivada(B, X, DB).
+derivada(A * B, X, A*DB + B*DA) :-
+    derivada(A, X, DA),
+    derivada(B, X, DB).
+derivada(A - B, X, DA - DB) :-
+    derivada(A, X, DA),
+    derivada(B, X, DB).
+
+% 5. 
+?- derivada(x*x + 3*x + 2, x, D).
+% D = x*1 + x*1 + (3*1 + x*0) + 0.
+
+% 6.
+?- derivada(x*x*x, x, D).
+% D = x*x*1 + x*(x*1 + x*1) .
+
+% 7. 
+?- derivada(x*x - 4*x + 1, x, D).
+% D = x*1 + x*1 - (4*1 + x*0) + 0
+
+% 8.
+?- derivada(x*x - 25*x + 13, x, D).
+% D = x*1 + x*1 - (25*1 + x*0) + 0.
+
 % -------------------------------------------------------------------
 % 5. RESOLUCION SIMBOLICA SENCILLA
 % -------------------------------------------------------------------
