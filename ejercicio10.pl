@@ -70,7 +70,7 @@ R = 0.
 /* 
 ejercicio 11: Combine evaluación y derivación: primero derive y luego evalúe el resultado en x = 2.
 ?- derivada(x*x + 3*x + 2, x, D), evalua(D, x, 2, R).
-R = 0.
+R = 7.
 */
 
 % 4. Suma de fracciones simbólicas
