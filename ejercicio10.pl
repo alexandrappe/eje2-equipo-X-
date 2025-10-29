@@ -28,11 +28,9 @@ derivada(A - B, X, DA - DB) :-
 ?- derivada(x*x - 25*x + 13, x, D).
 % D = x*1 + x*1 - (25*1 + x*0) + 0.
 
-% -------------------------------------------------------------------
+
 % 5. RESOLUCION SIMBOLICA SENCILLA
-% -------------------------------------------------------------------
-% Se resuelven ecuaciones lineales basicas de la forma X + N = M,
-% es decir, se despeja la variable cuando aparece sumada a una constante.
+
 
 % Caso donde la variable aparece primero: X + N = M.
 resuelve(X + N = M, X, V) :-
@@ -43,12 +41,7 @@ resuelve(N + X = M, X, V) :-
     number(N), number(M),
     V is M - N.
 
-% Ejemplo:
-% ?- resuelve(x + 3 = 7, x, V).
-% V = 4.
 
-
-/*🧠 5. Resolución simbólica sencilla
 15. Resuelva la ecuación:*/
 /*?- resuelve(x + 3 = 7, x, V).*/
 
