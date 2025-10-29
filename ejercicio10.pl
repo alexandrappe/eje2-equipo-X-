@@ -1,3 +1,37 @@
+% 1. Simplificacion simbolica
+simplifica(+(0, X), X).
+simplifica(+(X, 0), X).
+simplifica(*(1, X), X).
+simplifica(*(X, 1), X).
+simplifica(*(0, _), 0).
+simplifica(*(_, 0), 0).
+simplifica(X, X).
+
+/*1 ?- simplifica(*(1, +(0, X)), R).
+R = 0+X ;
+R = 1*(0+X). */
+
+/*
+2 ?- simplifica(*(0, +(X, 3)), R).
+R = 0 ;
+R = 0*(X+3).
+*/
+
+/*
+?- simplifica(+(X, 0), R).
+X = R, R = 0 ;
+X = R ;
+R = X+0.
+*/
+
+/*4. Proponga una expresión propia que contenga al menos una suma y un producto con términos neutros y simplifíquela.
+*/
+
+/*
+?- simplifica(+(0, *(X, 2)), R).
+R = X*2 ;
+R = 0+X*2.
+*/
 
 % 2. DERIVACION SIMBOLICA
 
